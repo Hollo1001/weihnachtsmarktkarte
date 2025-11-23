@@ -1,35 +1,7 @@
+import style from '../../../resources/mapstyle.json'
+
 export default function mapStyle() {
-  return {
-    version: 8,
-    name: 'weihnachtsmarktkarte',
-    metadata: {},
-    sources: {
-      osmBaseMap: {
-        type: 'raster',
-        tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
-        tileSize: 256,
-        attribution:
-          "&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors",
-        // bounds: [13.076477, 52.340374, 13.760376, 52.664723],
-      },
-    },
-    // "glyphs": "./data/{fontstack}/{range}.pbf",
-    layers: [
-      {
-        id: 'background',
-        type: 'background',
-        paint: {
-          'background-color': '#2b2c4e',
-        },
-      },
-      // {
-      //   id: 'osmBaseMap',
-      //   type: 'raster',
-      //   source: 'osmBaseMap',
-      //   // layout: {
-      //   //   visibility: "visisible",
-      //   // }
-      // },
-    ],
-  }
+  const mapKey = process.env.NEXT_PUBLIC_MAPTILER_KEY || 'YOUR_MAPTILER_KEY'
+  const styleString = JSON.stringify(style).replace(/MAPKEY/g, mapKey)
+  return JSON.parse(styleString)
 }

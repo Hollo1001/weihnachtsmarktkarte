@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import 'maplibre-gl/dist/maplibre-gl.css'
 import type { AppProps } from 'next/app'
 import { useMatomo } from '@lib/hooks/useMatomo'
 import '@components/Map/mapPopup.css'

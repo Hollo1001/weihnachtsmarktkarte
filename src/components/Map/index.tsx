@@ -7,7 +7,6 @@ import Map, {
   Popup,
 } from 'react-map-gl'
 import maplibregl from 'maplibre-gl'
-import 'maplibre-gl/dist/maplibre-gl.css'
 import mapStyle from './mapStyle'
 import { layerStyles } from './layerStyles'
 import { useState } from 'react'
@@ -132,8 +131,7 @@ export const MapComponent: FC<MapComponentType> = ({
       <Map
         mapLib={maplibregl}
         initialViewState={{ ...startMapView }}
-        mapStyle={process.env.NEXT_PUBLIC_MAPTILER_STYLE}
-        // mapStyle={mapStyle()}
+        mapStyle={mapStyle()}
         onClick={onMapCLick}
         // @ts-ignore
         ref={mapRef}
