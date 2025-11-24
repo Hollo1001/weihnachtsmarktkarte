@@ -80,7 +80,7 @@ const MapSite: NextPage = (mapData: any) => {
   const [mobileHeight, setMobileHeight] = useState<'half' | 'full'>('half')
 
   const [zoomToCenter, setZoomToCenter] = useState<number[]>([0, 0])
-  const [mapZoom, setMapZoom] = useState<number>(10)
+  const [mapZoom, setMapZoom] = useState<number>(13.5)
 
   const [marketsData, setMarketsData] = useState<any>(mapData.markets)
 
