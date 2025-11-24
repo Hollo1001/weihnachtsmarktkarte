@@ -97,14 +97,16 @@ export const IntroModal: FC<IntroModalType> = ({
                             __html: text.introModal.infoConstruction,
                           }}
                         ></p>
-                        <a
-                          className="xmas-btn px-4 hover:bg-darkgold bg-gold text-darkblue font-clanbold  p-2 md:p-3 text-center text-bold rounded border-2 border-gold hover:border-darkgold"
-                          href="https://www.berlin.de/sen/web/service/maerkte-feste/formular.230156.php"
-                        >
-                          {text.introModal.reportMarket}
-                        </a>
+                        <div className="hidden">
+                          <a
+                            className="xmas-btn px-4 hover:bg-darkgold bg-gold text-darkblue font-clanbold  p-2 md:p-3 text-center text-bold rounded border-2 border-gold hover:border-darkgold"
+                            href="https://www.berlin.de/sen/web/service/maerkte-feste/formular.230156.php"
+                          >
+                            {text.introModal.reportMarket}
+                          </a>
+                        </div>
                         <button
-                          className="mt-2 md:mt-0 px-4 md:ml-4 bg-darkblue text-lightblue text-bold border-2 border-lightblue/90 hover:border-gold p-2 rounded hover:text-lightblue hover:bg-gold"
+                          className="mt-2 md:mt-0 px-4 md:ml-0 bg-darkblue text-lightblue text-bold border-2 border-lightblue/90 hover:border-gold p-2 rounded hover:text-lightblue hover:bg-gold"
                           onClick={closeModalExplore}
                         >
                           {text.introModal.exploreMarkets}

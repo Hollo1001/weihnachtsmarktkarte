@@ -103,7 +103,7 @@ const MapSite: NextPage = (mapData: any) => {
         setMapZoom(12)
       }
     } else {
-      setModalOpen(true)
+      setModalOpen(false)
     }
 
     // set language
