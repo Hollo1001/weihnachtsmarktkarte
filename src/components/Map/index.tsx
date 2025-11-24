@@ -34,8 +34,8 @@ export const MapComponent: FC<MapComponentType> = ({
   const isMobile = useHasMobileSize()
   const mapRef = useRef<mapboxgl.Map>()
   const startMapView = {
-    longitude: 13.341760020413858,
-    latitude: 52.510831578689704,
+    longitude: 13.737262,
+    latitude: 51.050407,
     zoom: mapZoom,
   }
 
@@ -136,8 +136,7 @@ export const MapComponent: FC<MapComponentType> = ({
         // @ts-ignore
         ref={mapRef}
         maxBounds={[
-          12.088399568051996, 51.83535247581585, 14.96247925084541,
-          53.492513056341386,
+          13.587755, 50.965566, 13.965034, 51.174941
         ]}
         attributionControl={false}
         // onLoad={onMapLoad}
