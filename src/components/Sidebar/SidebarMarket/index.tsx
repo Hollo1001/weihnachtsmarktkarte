@@ -163,7 +163,7 @@ export const SidebarMarket: FC<SidebarMarketType> = ({
 
         {marketData.bemerkungen !== '' && (
           <MarketInfo title={text.sidebarMarket.info} icon={<Info />}>
-            <p className="text-sm">
+            <p className="text-sm whitespace-pre-line">
               {language === 'de'
                 ? marketData.bemerkungen
                 : marketData.bemerkungen_en || marketData.bemerkungen}
