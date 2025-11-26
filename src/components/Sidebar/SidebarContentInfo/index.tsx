@@ -73,10 +73,13 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({ text }) => {
         <section className="mt-6 flex flex-wrap">
           <div className="flex flex-col mr-6 mb-6">
             <span className="text-sm mb-3">{text.sidebarInfo.projectBy}</span>
-            <TsbLogo className={`w-30`} />
+            <p className="font-bold text-sm">Hans-Albrecht Schumann</p>
+            <p className="text-sm">TU Dresden</p>
+            <p className="text-sm">Fakultät Wirtschaftswissenschaften</p>
           </div>
           <div className="flex flex-col mb-2">
             <span className="text-sm mb-2">{text.sidebarInfo.madeBy}</span>
+            <p className="text-sm font-bold mb-2">Open Data Dresden</p>
             <a
               href="https://odis-berlin.de/"
               target="_blank"
@@ -86,19 +89,14 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({ text }) => {
               <OdisLogo className={`w-40`} />
             </a>
           </div>
-
-          <div className="flex flex-col">
-            <span className="text-sm mb-2">{text.sidebarInfo.supportedBy}</span>
-            <SenatskanzleiLogo className="w-40" />
-          </div>
         </section>
       </SidebarBody>
       <footer className={classNames('mt-8 p-4', 'flex flex-wrap')}>
         <span className="text-xs w-full mb-4">
-          © 2024 Technologiestiftung Berlin
+          © 2024 Hans-Albrecht Schumann
         </span>
         <a
-          href="https://www.technologiestiftung-berlin.de/de/impressum/"
+          href="/impressum"
           className={`text-xs hover:underline mr-4`}
           target="_blank"
           rel="noreferrer"
@@ -106,7 +104,7 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({ text }) => {
           {text.sidebarInfo.legal}
         </a>
         <a
-          href="https://www.technologiestiftung-berlin.de/de/datenschutz/"
+          href="/datenschutz"
           className={`text-xs hover:underline`}
           target="_blank"
           rel="noreferrer"

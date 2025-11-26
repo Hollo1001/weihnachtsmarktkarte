@@ -227,7 +227,7 @@ const text: Text = {
         interessierst, schau gerne in unserem
         <a
             target="blank"
-            href="https://github.com/technologiestiftung/weihnachtsmarktkarte"
+            href="https://github.com/Hollo1001/weihnachtsmarktkarte"
             class="text-gold"
         >
             GitHub-Repository
@@ -236,15 +236,14 @@ const text: Text = {
         </p>`,
       infoAboutHeader: 'Über uns',
       infoAbout: `<p class="text-sm pb-2">
-        Der “Dresdner Weihnachtsmarkt-Finder” ist ein auf Open Data basierendes Projekt.
-      
-                <br />
+        Der “Dresdner Weihnachtsmarkt-Finder” ist ein Projekt von Hans-Albrecht Schumann im Rahmen eines Projektes an der TU Dresden, Fakultät Wirtschaftswissenschaften. Es entstand in Kooperation mit Open Data Dresden und Berlin.
+        <br />
         <br />
         Du hast Feedback oder willst mehr
         erfahren? Schau dich auf unserer Webseite um.
         </p>`,
-      projectBy: 'Ein Projekt der',
-      madeBy: 'Durchgeführt von der',
+      projectBy: 'Ein Projekt von',
+      madeBy: 'In Kooperation mit',
       supportedBy: 'Gefördert von',
       privacy: 'Datenschutzerklärung',
       legal: 'Impressum',
@@ -346,7 +345,7 @@ const text: Text = {
           target="blank"
           href="https://www.openstreetmap.de"
           class="text-gold"
-        >
+          >
           OpenStreetMap
       </a>
       .
@@ -411,7 +410,7 @@ const text: Text = {
       and further development, also in other cities. If you are interested in this, visit our 
       <a
           target="blank"
-          href="https://github.com/technologiestiftung/weihnachtsmarktkarte"
+          href="https://github.com/Hollo1001/weihnachtsmarktkarte"
           class="text-gold"
       >
           repository 
@@ -420,14 +419,14 @@ const text: Text = {
       </p>`,
       infoAboutHeader: 'About',
       infoAbout: `<p class="text-sm pb-2">
-      The Dresden Christmas Market Finder is a project based on Open Data.
+      The Dresden Christmas Market Finder is a project by Hans-Albrecht Schumann as part of a project at TU Dresden, Faculty of Business and Economics. It was created in cooperation with Open Data Dresden and Berlin.
       <br />
       <br />  
       Do you have feedback or would like to 
       find out more? Visit our website.
       </p>`,
       projectBy: 'A Project by',
-      madeBy: 'Made by',
+      madeBy: 'In cooperation with',
       supportedBy: 'Supported by',
       privacy: 'Privacy Policy',
       legal: 'Legal notice',
