@@ -221,7 +221,7 @@ export const WeatherOverlay: FC<{
     const fetchWeather = async () => {
       try {
         const response = await fetch(
-          `https://api.brightsky.dev/weather?lat=52.5162&lon=13.3777&date=${dateAPI}`
+          `https://api.brightsky.dev/weather?lat=51.0504&lon=13.7373&date=${dateAPI}`
         )
         const data: WeatherAPIResponseType = await response.json()
 
