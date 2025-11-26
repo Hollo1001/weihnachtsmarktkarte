@@ -40,6 +40,7 @@ const Impressum: NextPage = () => {
           <h2 className="text-xl font-bold mb-2">Kontakt</h2>
           <p>Tel.: +49 351 463-34607</p>
           <p>E-Mail: isih@mailbox.tu-dresden.de</p>
+          <p>E-Mail (Projektleitung): hans-albrecht.schumann@mailbox.tu-dresden.de</p>
         </div>
 
         <div className="mb-8">
