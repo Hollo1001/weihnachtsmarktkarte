@@ -25,9 +25,9 @@ interface HeadPropType {
 }
 
 export const Head: FC<Partial<HeadPropType>> = ({
-  description = 'Glühwein, Glögg, Glückseligkeit - Finde Weihnachtsmärkte in Berlin basierend auf Öffnungszeiten und Themen',
-  siteTitle = 'weihnachtsmaerkte.odis-berlin.de',
-  pageTitle = 'Berliner Weihnachtsmarkt-Finder',
+  description = 'Glühwein, Glögg, Glückseligkeit - Finde Weihnachtsmärkte in Dresden basierend auf Öffnungszeiten und Themen',
+  siteTitle = 'weihnachtsmarktkarte.vercel.app',
+  pageTitle = 'Dresden Weihnachtsmarkt-Finder',
   fbAppId = '',
   keywords = [
     'Berlin',
