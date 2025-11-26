@@ -10,8 +10,12 @@ const daysHelper = {
 
 function toDate(string) {
   const dateArray = string.trim().split('.')
+  let year = dateArray[2]
+  if (year && year.length === 2) {
+    year = '20' + year
+  }
   const newString =
-    '20' + dateArray[2] + '-' + dateArray[1] + '-' + dateArray[0] + 'T00:00:00'
+    year + '-' + dateArray[1] + '-' + dateArray[0] + 'T00:00:00'
   return new Date(newString)
 }
 
@@ -45,6 +49,7 @@ function openOnDate(date, d) {
   if (d['hours-exc'] !== '0') {
     let open = false
     d['hours-exc'].split(',').forEach((dt) => {
+      if (dt.trim() === '') return
       const dateAndTime = dt.trim().split('=')
       if (toDate(dateAndTime[0]).toISOString() === date.toISOString()) {
         open = true
@@ -92,6 +97,7 @@ function openLate(d, date) {
     }
     if (d['hours-exc'] !== '0') {
       d['hours-exc'].split(',').forEach((dt) => {
+        if (dt.trim() === '') return
         const dateAndTime = dt.trim().split('=')
         if (toDate(dateAndTime[0]).toISOString() === date.toISOString()) {
           openLate = lastHour(dateAndTime[1]) > late
