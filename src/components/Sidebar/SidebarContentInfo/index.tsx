@@ -93,7 +93,7 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({ text }) => {
       </SidebarBody>
       <footer className={classNames('mt-8 p-4', 'flex flex-wrap')}>
         <span className="text-xs w-full mb-4">
-          © 2024 Hans-Albrecht Schumann
+          © 2025 Hans-Albrecht Schumann
         </span>
         <a
           href="/impressum"
