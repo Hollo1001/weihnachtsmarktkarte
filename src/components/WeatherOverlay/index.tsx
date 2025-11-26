@@ -259,14 +259,15 @@ export const WeatherOverlay: FC<{
   }, [dateAPI]) // Add dateAPI as a dependency to useEffect
 
   return (
-    <nav className="nav-small-height-temp">
+    <nav className="nav-small-height-temp absolute top-0 left-0 w-0 h-0 pointer-events-none overflow-visible z-50">
       {weatherRecords &&
         weatherRecords[hour] &&
-        weatherRecords[hour].temperature && (
+        typeof weatherRecords[hour].temperature === 'number' && (
           <button
             onClick={() => openWindows()}
             aria-label="Wettervorhersage"
             className={classNames(
+              'pointer-events-auto',
               'rounded-full w-10 h-10 mt-40',
               'fixed right-4 text-center py-2 z-10',
               'bg-darkblue text-gold',
