@@ -48,6 +48,7 @@ export interface LanguageText {
     projectBy: string
     madeBy: string
     supportedBy: string
+    mpscCredit: string
     privacy: string
     legal: string
   }
@@ -256,6 +257,8 @@ const text: Text = {
       projectBy: 'Ein Projekt von',
       madeBy: 'In Kooperation mit',
       supportedBy: 'Gefördert von',
+      mpscCredit:
+        'Dieses Projekt entstand durch freundliche Unterstützung des Modellprojektes Smart Cities (MPSC), finanziert durch das Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen (BMWSB) und die Kreditanstalt für Wiederaufbau (KfW)',
       privacy: 'Datenschutzerklärung',
       legal: 'Impressum',
     },
@@ -450,6 +453,8 @@ const text: Text = {
       projectBy: 'A Project by',
       madeBy: 'In cooperation with',
       supportedBy: 'Supported by',
+      mpscCredit:
+        'This project was created with the kind support of the Model Projects Smart Cities (MPSC), funded by the Federal Ministry for Housing, Urban Development and Building (BMWSB) and the Kreditanstalt für Wiederaufbau (KfW).',
       privacy: 'Privacy Policy',
       legal: 'Legal notice',
     },

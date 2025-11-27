@@ -284,6 +284,7 @@ export const WeatherOverlay: FC<{
       {isWeatherOpened && weatherRecords && (
         <div
           className={classNames(
+            'pointer-events-auto',
             'right-4  top-4 sm:top-36 sm:right-20',
             'rounded shadow-xl p-6 sm:p-8 w-96',
             'fixed bg-darkblue flex flex-col z-20'
