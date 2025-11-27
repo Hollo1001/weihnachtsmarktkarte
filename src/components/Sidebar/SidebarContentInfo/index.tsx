@@ -89,6 +89,14 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({ text }) => {
               <OdisLogo className={`w-40`} />
             </a>
           </div>
+          <div className="flex flex-col mb-2 mt-4">
+            <p className="text-sm">
+              Dieses Projekt entstand durch freundliche Unterstützung des
+              Modellprojektes Smart Cities (MPSC), finanziert durch das
+              Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen
+              (BMWSB) und die Kreditanstalt für Wiederaufbau (KfW)
+            </p>
+          </div>
         </section>
       </SidebarBody>
       <footer className={classNames('mt-8 p-4', 'flex flex-wrap')}>

@@ -50,6 +50,7 @@ const Impressum: NextPage = () => {
 
         <div className="mb-8 text-sm text-gray-600">
           <p>Dies ist ein Projekt im Rahmen eines Studiums an der Technischen Universität Dresden (Fakultät Wirtschaftswissenschaften) in Kooperation mit Open Data Dresden und Open Data Berlin (ODIS).</p>
+          <p className="mt-2">Dieses Projekt entstand durch freundliche Unterstützung des Modellprojektes Smart Cities (MPSC), finanziert durch das Bundesministerium für Wohnen, Stadtentwicklung und Bauwesen (BMWSB) und die Kreditanstalt für Wiederaufbau (KfW)</p>
         </div>
 
         <div className="mb-8">

@@ -109,3 +109,29 @@ cursor: pointer;
     position: absolute;
   }
 }
+
+/* Custom Scrollbar for Flat Dark Blue Design */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #091725;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a3b4c;
+  border: none;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4b5c;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a3b4c #091725;
+}
