@@ -46,6 +46,8 @@ export const MapComponent: FC<MapComponentType> = ({
 
   const [markerPosition, setMarkerPosition] = useState<number[]>([0, 0])
 
+  const mapStyleJson = useMemo(() => mapStyle(), [])
+
   useEffect(() => {
     if (mapRef.current) {
       // @ts-ignore
@@ -131,7 +133,7 @@ export const MapComponent: FC<MapComponentType> = ({
       <Map
         mapLib={maplibregl}
         initialViewState={{ ...startMapView }}
-        mapStyle={mapStyle()}
+        mapStyle={mapStyleJson}
         onClick={onMapCLick}
         // @ts-ignore
         ref={mapRef}
