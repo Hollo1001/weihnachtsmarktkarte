@@ -2,7 +2,6 @@ import { FC } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Cross, UnderConstruction } from '../Icons'
 
-import { TsbLogo } from '@components/Logos/TsbLogo'
 import { OdisLogo } from '@components/Logos/OdisLogo'
 
 import { LanguageText } from '@lib/getText'
@@ -133,17 +132,37 @@ export const IntroModal: FC<IntroModalType> = ({
                   </>
                 )}
 
-                <div className="grid md:grid-cols-[1fr,auto] gap-4 mt-4 md:mt-6">
-                  <p className="text-xs mb-2 md:mb-0 text-gray-500 w-11/12 md:w-full pt-4">
-                    <i>{text.introModal.info}</i>
-                  </p>
-                  <div className="ml-2 flex self-center w-10/12">
-                    <div className="w-32">
-                      <TsbLogo className={`w-30`} />
-                    </div>
-                    <div className="w-32 pt-2 mr-8 md:mt-0 self-center md:pl-4">
+                <div className="mt-6 flex flex-wrap">
+                  <div className="flex flex-col mr-6 mb-4">
+                    <span className="text-xs mb-2 text-gray-400">
+                      {text.sidebarInfo.projectBy}
+                    </span>
+                    <p className="font-bold text-sm">Hans-Albrecht Schumann</p>
+                    <p className="text-sm">TU Dresden</p>
+                    <p className="text-sm">
+                      Fakultät Wirtschaftswissenschaften
+                    </p>
+                  </div>
+                  <div className="flex flex-col mb-4 mr-6">
+                    <span className="text-xs mb-2 text-gray-400">
+                      {text.sidebarInfo.madeBy}
+                    </span>
+                    <p className="text-sm font-bold mb-2">Open Data Dresden</p>
+                    <a
+                      href="https://odis-berlin.de/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open Data Informationsstelle Berlin"
+                      className="w-32"
+                    >
                       <OdisLogo className={`w-30`} />
-                    </div>
+                    </a>
+                  </div>
+                  <div className="flex flex-col mb-4 flex-1 min-w-[200px]">
+                    <span className="text-xs mb-2 text-gray-400">
+                      {text.sidebarInfo.supportedBy}
+                    </span>
+                    <p className="text-xs">{text.sidebarInfo.mpscCredit}</p>
                   </div>
                 </div>
               </div>
