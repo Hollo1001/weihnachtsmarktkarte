@@ -21,6 +21,7 @@ import { FC, ReactNode, useEffect, useState } from 'react'
 import { format } from 'date-fns'
 import { de } from 'date-fns/locale'
 import { LanguageText } from '@lib/getText'
+import { useHasMobileSize } from '@lib/hooks/useHasMobileSize'
 
 interface WeatherOptionPropType {
   value: ReactNode
@@ -143,6 +144,7 @@ export const WeatherOverlay: FC<{
   text: LanguageText
 }> = ({ marketFilterDate, setSidebarMenuOpen, text }) => {
   const [isWeatherOpened, setIsWeatherOpened] = useState(false)
+  const hasMobileSize = useHasMobileSize()
   //const elRef = useClickOutside<HTMLDivElement>(() => setIsWeatherOpened(false))
 
   const [weatherRecords, setWeatherRecords] = useState<WeatherType[] | null>(
@@ -155,7 +157,7 @@ export const WeatherOverlay: FC<{
   function openWindows() {
     setIsWeatherOpened(!isWeatherOpened)
     if (!isWeatherOpened) {
-      setSidebarMenuOpen(true)
+      // setSidebarMenuOpen(true)
     }
   }
 
@@ -259,7 +261,7 @@ export const WeatherOverlay: FC<{
   }, [dateAPI]) // Add dateAPI as a dependency to useEffect
 
   return (
-    <nav className="nav-small-height-temp absolute top-0 left-0 w-0 h-0 pointer-events-none overflow-visible z-50">
+    <nav className="nav-small-height-temp absolute top-0 left-0 w-0 h-0 pointer-events-none overflow-visible z-10">
       {weatherRecords &&
         weatherRecords[hour] &&
         typeof weatherRecords[hour].temperature === 'number' && (
@@ -284,97 +286,102 @@ export const WeatherOverlay: FC<{
       {isWeatherOpened && weatherRecords && (
         <div
           className={classNames(
-            'pointer-events-auto',
-            'right-4  top-4 sm:top-36 sm:right-20',
-            'rounded shadow-xl p-6 sm:p-8 w-96',
-            'fixed bg-darkblue flex flex-col z-20'
+            'pointer-events-auto transition-all ease-in-out duration-300',
+            hasMobileSize
+              ? 'h-1/2 w-full bottom-0 left-0 fixed bg-darkblue flex flex-col z-50 rounded-t-xl p-4'
+              : 'right-4 top-4 sm:top-36 sm:right-20 rounded shadow-xl p-6 sm:p-8 w-96 fixed bg-darkblue flex flex-col z-20'
           )}
-          style={{ maxWidth: 'calc(100% - 32px)' }}
+          style={hasMobileSize ? {} : { maxWidth: 'calc(100% - 32px)' }}
         >
-          <h3 className="font-clanbold text-lg text-lightblue/80 sm:text-xl pr-20 mb-2">
-            {text.weather.header}
-          </h3>
-          <div className="flex mb-1 last-of-type:mb-0">
-            <div className="pr-4 mb-2">
-              <p className="text-sm hidden sm:block text-gold mb-2 w-11/12 sm:w-11/12">
-                {text.weather.subHeader}
-              </p>
-              {/* <p className="text-sm sm:hidden text-gold mb-2">
+          <div className="overflow-y-auto h-full">
+            <h3 className="font-clanbold text-lg text-lightblue/80 sm:text-xl pr-20 mb-2">
+              {text.weather.header}
+            </h3>
+            <div className="flex mb-1 last-of-type:mb-0">
+              <div className="pr-4 mb-2">
+                <p className="text-sm hidden sm:block text-gold mb-2 w-11/12 sm:w-11/12">
+                  {text.weather.subHeader}
+                </p>
+                {/* <p className="text-sm sm:hidden text-gold mb-2">
                 Stelle im Filtermenü einen Tag ein.
               </p> */}
-              <p className="text-md sm:text-lg font-clanbold text-lightblue/80 sm:pt-2">
-                {`${formatDate(current)}`}
-              </p>
-            </div>
-          </div>
-          {!forecastCheck && (
-            <div>
-              <p className="text-lightblue/80 text-xs sm:text-sm mb-4 sm:mb-6 sm:w-11/12">
-                Für diesen Tag ist noch keine Wettervorhersage verfügbar. Du
-                kannst das Wetter für 9 Tage im Voraus sehen.
-              </p>
-            </div>
-          )}
-          {isSameDay && weatherRecords[hour] && (
-            <>
-              <div className="block xs:hidden ">
-                <WeatherRow
-                  weatherRecords={weatherRecords}
-                  hour={hour}
-                  ICON_MAPPING={ICON_MAPPING}
-                  hourString={'jetzt'}
-                />
+                <p className="text-md sm:text-lg font-clanbold text-lightblue/80 sm:pt-2">
+                  {`${formatDate(current)}`}
+                </p>
               </div>
-              <div className="hidden xs:block">
-                <WeatherRow
-                  weatherRecords={weatherRecords}
-                  hour={hour}
-                  ICON_MAPPING={ICON_MAPPING}
-                  hourString={text.weather.current}
-                />
-              </div>
-            </>
-          )}
-          {forecastCheck && isSameDay && weatherRecords[hour] && (
-            <hr className="border-lightblue/80 mt-2 mb-2" />
-          )}
-          {weatherRecords[13] &&
-            weatherRecords[17] &&
-            weatherRecords[21] &&
-            forecastCheck && (
+            </div>
+            {!forecastCheck && (
               <div>
-                <div className="hidden sm:block">
-                  <WeatherRow
-                    weatherRecords={weatherRecords}
-                    hour={13}
-                    ICON_MAPPING={ICON_MAPPING}
-                    hourString={'13 Uhr'}
-                  />
-                  <hr className="border-lightblue/80 mt-2 mb-2" />
-                </div>
-                <WeatherRow
-                  weatherRecords={weatherRecords}
-                  hour={17}
-                  ICON_MAPPING={ICON_MAPPING}
-                  hourString={'17 Uhr'}
-                />
-                <hr className="border-lightblue/80 mt-2 mb-2" />
-                <WeatherRow
-                  weatherRecords={weatherRecords}
-                  hour={21}
-                  ICON_MAPPING={ICON_MAPPING}
-                  hourString={'21 Uhr'}
-                />
+                <p className="text-lightblue/80 text-xs sm:text-sm mb-4 sm:mb-6 sm:w-11/12">
+                  Für diesen Tag ist noch keine Wettervorhersage verfügbar. Du
+                  kannst das Wetter für 9 Tage im Voraus sehen.
+                </p>
               </div>
             )}
-          <hr className="border-lightblue/80 mt-2 hidden sm:block" />
-          {weatherStation && (
-            <p className="text-xs text-lightblue/80 mt-3 sm:mt-6">
-              {`${text.weather.station}  ${capitalizeWords(weatherStation)}`}
-            </p>
-          )}
+            {isSameDay && weatherRecords[hour] && (
+              <>
+                <div className="block xs:hidden ">
+                  <WeatherRow
+                    weatherRecords={weatherRecords}
+                    hour={hour}
+                    ICON_MAPPING={ICON_MAPPING}
+                    hourString={'jetzt'}
+                  />
+                </div>
+                <div className="hidden xs:block">
+                  <WeatherRow
+                    weatherRecords={weatherRecords}
+                    hour={hour}
+                    ICON_MAPPING={ICON_MAPPING}
+                    hourString={text.weather.current}
+                  />
+                </div>
+              </>
+            )}
+            {forecastCheck && isSameDay && weatherRecords[hour] && (
+              <hr className="border-lightblue/80 mt-2 mb-2" />
+            )}
+            {weatherRecords[13] &&
+              weatherRecords[17] &&
+              weatherRecords[21] &&
+              forecastCheck && (
+                <div>
+                  <div className={classNames(hasMobileSize ? 'block' : 'hidden sm:block')}>
+                    <WeatherRow
+                      weatherRecords={weatherRecords}
+                      hour={13}
+                      ICON_MAPPING={ICON_MAPPING}
+                      hourString={'13 Uhr'}
+                    />
+                    <hr className="border-lightblue/80 mt-2 mb-2" />
+                  </div>
+                  <WeatherRow
+                    weatherRecords={weatherRecords}
+                    hour={17}
+                    ICON_MAPPING={ICON_MAPPING}
+                    hourString={'17 Uhr'}
+                  />
+                  <hr className="border-lightblue/80 mt-2 mb-2" />
+                  <WeatherRow
+                    weatherRecords={weatherRecords}
+                    hour={21}
+                    ICON_MAPPING={ICON_MAPPING}
+                    hourString={'21 Uhr'}
+                  />
+                </div>
+              )}
+            <hr className="border-lightblue/80 mt-2 hidden sm:block" />
+            {weatherStation && (
+              <p className="text-xs text-lightblue/80 mt-3 sm:mt-6">
+                {`${text.weather.station}  ${capitalizeWords(weatherStation)}`}
+              </p>
+            )}
+          </div>
           <button
-            className="text-lightblue/80 top-0 right-0 mr-6 mt-6 absolute cursor-pointer z-20 border-lightblue border-2 hover:bg-gold hover:border-gold rounded-full p-0"
+            className={classNames(
+              'text-lightblue/80 absolute cursor-pointer z-20 border-lightblue border-2 hover:bg-gold hover:border-gold rounded-full p-0',
+              hasMobileSize ? 'top-4 right-4' : 'top-0 right-0 mr-6 mt-6'
+            )}
             onClick={() => setIsWeatherOpened(false)}
             title="close"
           >
