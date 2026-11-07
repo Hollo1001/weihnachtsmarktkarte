@@ -104,12 +104,12 @@ const text: Text = {
       moreInfo: 'Mehr Infos',
       info: 'Eine prototypische Datenvisualisierung für Dresden',
       infoConstruction: `Im Weihnachtsmarkt-Finder werden gerade die Daten für
-      die Weihnachtszeit 2025 aktualisiert!
+      die Weihnachtszeit 2026 aktualisiert!
       <span class="text-gold font-clanbold">
         Sie sind Betreiber:in eines Weihnachtsmarkts? Dann
         melden Sie sich bitte bei der Stadtverwaltung Dresden.
       </span>
-      Mitte November steht der neue Weihnachtsmarkt-Finder 2025
+      Mitte November steht der neue Weihnachtsmarkt-Finder 2026
       zur Verfügung.`,
       reportMarket: 'Markt melden',
       exploreMarkets: 'Märkte 2024 erkunden',
@@ -310,11 +310,11 @@ const text: Text = {
       explore: 'Explore',
       moreInfo: 'About',
       info: 'A data visualization prototype for Dresden',
-      infoConstruction: `The Christmas Market Finder is currently being updated with dates for the 2025 Christmas season!
+      infoConstruction: `The Christmas Market Finder is currently being updated with dates for the 2026 Christmas season!
       <span className="text-gold font-clanbold">
         Are you the operator of a Christmas Market? Then please contact the Dresden city administration.
       </span>
-      The updated Christmas Market Finder for 2025 will be made available in the middle of November.`,
+      The updated Christmas Market Finder for 2026 will be made available in the middle of November.`,
       reportMarket: 'Report market',
       exploreMarkets: 'Explore markets from 2024',
     },
