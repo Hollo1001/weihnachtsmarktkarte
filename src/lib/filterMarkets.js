@@ -73,7 +73,10 @@ function openOnDate(date, d) {
 }
 
 function lastHour(timeString) {
-  return timeString.split('-')[1].split(':')[0]
+  if (!timeString || timeString.indexOf('-') === -1) return ''
+  const end = timeString.split('-')[1]
+  if (!end || end.indexOf(':') === -1) return ''
+  return end.split(':')[0]
 }
 
 function openLate(d, date) {

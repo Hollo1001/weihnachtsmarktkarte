@@ -73,7 +73,14 @@ export const SidebarContentInfo: FC<SidebarContentInfoType> = ({ text }) => {
         <section className="mt-6 flex flex-wrap">
           <div className="flex flex-col mr-6 mb-6">
             <span className="text-sm mb-3">{text.sidebarInfo.projectBy}</span>
-            <p className="font-bold text-sm">Hans-Albrecht Schumann</p>
+            <a
+              href="https://www.linkedin.com/in/hans-albrecht-schumann"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-sm hover:underline"
+            >
+              Hans-Albrecht Schumann
+            </a>
             <p className="text-sm">TU Dresden</p>
             <p className="text-sm">Fakultät Wirtschaftswissenschaften</p>
           </div>

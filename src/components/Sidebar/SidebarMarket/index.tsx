@@ -136,7 +136,13 @@ export const SidebarMarket: FC<SidebarMarketType> = ({
             </li>
             {days.map((day: string, i: number) => (
               <li key={'time' + i}>
-                {marketData[day] === '0' ? '-' : marketData[day]}
+                {marketData[day] === '0'
+                  ? '-'
+                  : marketData[day] === 'offen'
+                  ? language === 'de'
+                    ? 'folgt'
+                    : 'tbc'
+                  : marketData[day]}
               </li>
             ))}
           </ul>

@@ -137,7 +137,14 @@ export const IntroModal: FC<IntroModalType> = ({
                     <span className="text-xs mb-2 text-gray-400">
                       {text.sidebarInfo.projectBy}
                     </span>
-                    <p className="font-bold text-sm">Hans-Albrecht Schumann</p>
+                    <a
+                      href="https://www.linkedin.com/in/hans-albrecht-schumann"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold text-sm hover:underline"
+                    >
+                      Hans-Albrecht Schumann
+                    </a>
                     <p className="text-sm">TU Dresden</p>
                     <p className="text-sm">
                       Fakultät Wirtschaftswissenschaften

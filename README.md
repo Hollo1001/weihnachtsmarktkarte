@@ -87,7 +87,7 @@ npm run dev
 <table>
   <tr>
     <td>
-      Project by: Hans-Albrecht Schumann (TU Dresden)
+      Project by: <a href="https://www.linkedin.com/in/hans-albrecht-schumann">Hans-Albrecht Schumann</a> (TU Dresden)
     </td>
     <td>
       In cooperation with: Open Data Dresden

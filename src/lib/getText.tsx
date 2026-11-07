@@ -237,7 +237,7 @@ const text: Text = {
         </p>`,
       infoAboutHeader: 'Über uns',
       infoAbout: `<p class="text-sm pb-2">
-        Der “Dresdner Weihnachtsmarkt-Finder” ist ein Projekt von Hans-Albrecht Schumann im Rahmen eines Projektes an der TU Dresden, Fakultät Wirtschaftswissenschaften. Es entstand in Kooperation mit Open Data Dresden und Berlin.
+        Der “Dresdner Weihnachtsmarkt-Finder” ist ein Projekt von <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/hans-albrecht-schumann" class="text-gold">Hans-Albrecht Schumann</a> im Rahmen eines Projektes an der TU Dresden, Fakultät Wirtschaftswissenschaften. Es entstand in Kooperation mit Open Data Dresden und Berlin.
         <br />
         <br />
         Das Projekt basiert auf dem
@@ -433,7 +433,7 @@ const text: Text = {
       </p>`,
       infoAboutHeader: 'About',
       infoAbout: `<p class="text-sm pb-2">
-      The Dresden Christmas Market Finder is a project by Hans-Albrecht Schumann as part of a project at TU Dresden, Faculty of Business and Economics. It was created in cooperation with Open Data Dresden and Berlin.
+      The Dresden Christmas Market Finder is a project by <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/hans-albrecht-schumann" class="text-gold">Hans-Albrecht Schumann</a> as part of a project at TU Dresden, Faculty of Business and Economics. It was created in cooperation with Open Data Dresden and Berlin.
       <br />
       <br />  
       The project is based on the 
