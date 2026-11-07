@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 const siteUrl =
   process.env.URL ||
   (process.env.VERCEL_ENV === 'preview' && process.env.VERCEL_URL) ||
-  'https://weihnachtsmaerkte.odis-berlin.de'
+  'https://weihnachtsmarktkarte-dresden.de'
 
 const faviconPath = '/favicon.ico'
 const faviconPNGPath = '/favicons/star.png'
@@ -26,7 +26,7 @@ interface HeadPropType {
 
 export const Head: FC<Partial<HeadPropType>> = ({
   description = 'Glühwein, Glögg, Glückseligkeit - Finde Weihnachtsmärkte in Dresden basierend auf Öffnungszeiten und Themen',
-  siteTitle = 'weihnachtsmarktkarte.vercel.app',
+  siteTitle = 'weihnachtsmarktkarte-dresden.de',
   pageTitle = 'Dresden Weihnachtsmarkt-Finder',
   fbAppId = '',
   keywords = [
